@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class Repeticao {
@@ -120,7 +122,7 @@ public class Repeticao {
         }
         scanner.close();
     }
-    public void ContarPositivosENegativos(){
+    public void contarPositivosENegativos(){
     System.out.println("Conta quantos dos números inseridos são positivos ou negativos.");
     Scanner scanner = new Scanner(System.in);
     int positivos = 0;
@@ -150,6 +152,25 @@ public class Repeticao {
             System.out.println("Números neutros (0): " + zero);
         }
     scanner.close();
+    }
+
+    public void pularNumeroCinco() {
+        System.out.println("Conta de 1 até o número definido, pulando os números que terminam em 5.");
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Informe o número limite: ");
+        int limite = scanner.nextInt();
+
+        Integer[] arr = {};
+        ArrayList<Integer> resultado = new ArrayList<>(Arrays.asList(arr));
+
+        for (int i = 1; i <= limite; i++) {
+            if (i % 10 != 5) {
+                resultado.add(i);
+            }
+        }
+        System.out.println(resultado);
+
+        scanner.close();
     }
 
 

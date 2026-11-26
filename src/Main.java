@@ -5,7 +5,7 @@ public class Main {
 
         Repeticao repeticao = new Repeticao();
 
-        repeticao.ContarPositivosENegativos();
+        repeticao.pularNumeroCinco();
 
 
          /* Ex 1:

@@ -3,6 +3,11 @@ public class Main {
 
     public static void main(String[] args) {
 
+        Repeticao repeticao = new Repeticao();
+
+        repeticao.listaDeConvidados();
+
+
          /* Ex 1:
 
          String nome = "Andrey";

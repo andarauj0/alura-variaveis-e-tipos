@@ -5,7 +5,7 @@ public class Main {
 
         Repeticao repeticao = new Repeticao();
 
-        repeticao.pularNumeroCinco();
+        repeticao.listaDeConvidados();
 
 
          /* Ex 1:

@@ -16,17 +16,17 @@ public class Repeticao {
         scanner.close();
     }
 
-    public void calcularArray(){
+    public void calcularArray() {
         int[] valores = {10, 20, 30, 40, 50};
         int soma = 0;
 
-        for (int i = 0; i < valores.length; i++){
-        soma = soma + valores[i];
+        for (int i = 0; i < valores.length; i++) {
+            soma = soma + valores[i];
         }
         System.out.println("A soma total das receitas é: " + soma);
     }
 
-    public void calcularPares(){
+    public void calcularPares() {
         System.out.println("Calcula os números pares entre os números digitados.");
         Scanner scanner = new Scanner(System.in);
         System.out.println("Digite o número 1: ");
@@ -38,16 +38,16 @@ public class Repeticao {
 
         int soma = 0;
 
-        for(int i = valor1; i <= valor2; i++){
+        for (int i = valor1; i <= valor2; i++) {
             if (i % 2 == 0) {
-                soma +=i;
+                soma += i;
             }
         }
         System.out.println("A soma dos números pares de " + valor1 + " a " + valor2 + " é: " + soma);
         scanner.close();
     }
 
-    public void calcularFatorial(){
+    public void calcularFatorial() {
         System.out.println("Calcula o fatorial do número digitado.");
         Scanner scanner = new Scanner(System.in);
         System.out.println("Digite um número: ");
@@ -59,21 +59,21 @@ public class Repeticao {
             System.out.println("O valor deve ser positivo");
             return;
         }
-        for(int i = valor; i > 0; i--) {
+        for (int i = valor; i > 0; i--) {
             resultado *= i;
         }
         System.out.println("O fatorial de " + valor + " é: " + resultado);
         scanner.close();
     }
 
-    public void encontrarMaior(){
+    public void encontrarMaior() {
         System.out.println("Encontra o maior número entre os digitados.");
         Scanner scanner = new Scanner(System.in);
         System.out.println("Digite os números separados por espaço: ");
         String valores[] = scanner.nextLine().split(" ");
         int maior = Integer.MIN_VALUE;
 
-        for (String numStr : valores){
+        for (String numStr : valores) {
             int num = Integer.parseInt(numStr);
             if (num > maior) {
                 maior = num;
@@ -84,15 +84,15 @@ public class Repeticao {
         scanner.close();
     }
 
-    public void validarLogin(){
+    public void validarLogin() {
         System.out.println("Valida seu pin para logar.");
         Scanner scanner = new Scanner(System.in);
         int senha = 1234;
 
-        for (int i = 2; i >= 0; i-- ){
+        for (int i = 2; i >= 0; i--) {
             System.out.println("Digite os números do pin:");
             int senhaDigitada = scanner.nextInt();
-            if (senhaDigitada == senha){
+            if (senhaDigitada == senha) {
                 System.out.println("Acesso concedido.");
                 return;
             }
@@ -103,36 +103,37 @@ public class Repeticao {
         scanner.close();
     }
 
-    public void validarNome(){
+    public void validarNome() {
         System.out.println("Valida o nome inserido.");
         Scanner scanner = new Scanner(System.in);
         boolean i = true;
 
 
-        while (i){
-        System.out.println("Digite o nome: ");
-        String nome = scanner.nextLine();
-        if (nome.length() >= 3){
-            System.out.println("Nome '" + nome + "' cadastrado com sucesso.");
-            i = false;
-            return;
-        }
+        while (i) {
+            System.out.println("Digite o nome: ");
+            String nome = scanner.nextLine();
+            if (nome.length() >= 3) {
+                System.out.println("Nome '" + nome + "' cadastrado com sucesso.");
+                i = false;
+                return;
+            }
 
             System.out.println("Nome inválido, tente novamente.");
         }
         scanner.close();
     }
-    public void contarPositivosENegativos(){
-    System.out.println("Conta quantos dos números inseridos são positivos ou negativos.");
-    Scanner scanner = new Scanner(System.in);
-    int positivos = 0;
-    int negativos = 0;
-    int zero = 0;
-    String entrada;
 
-    do {
-        System.out.println("Informe um número (ou 'fim' para encerrar): ");
-        entrada = scanner.nextLine();
+    public void contarPositivosENegativos() {
+        System.out.println("Conta quantos dos números inseridos são positivos ou negativos.");
+        Scanner scanner = new Scanner(System.in);
+        int positivos = 0;
+        int negativos = 0;
+        int zero = 0;
+        String entrada;
+
+        do {
+            System.out.println("Informe um número (ou 'fim' para encerrar): ");
+            entrada = scanner.nextLine();
 
         if (!entrada.equalsIgnoreCase("FIM")) {
             int numero = Integer.parseInt(entrada);
@@ -173,5 +174,35 @@ public class Repeticao {
         scanner.close();
     }
 
+    public void listaDeConvidados() {
+        System.out.println("Sistema para gerenciar uma lista de convidados.");
+        Scanner scanner = new Scanner(System.in);
 
+        String[] arr = {};
+        ArrayList<String> nomes = new ArrayList<>(Arrays.asList(arr));
+
+
+        while(true) {
+        System.out.println("Informe um nome (ou 'ver' para visualizar a lista, ou 'sair' para encerrar): ");
+        String entrada = scanner.nextLine();
+
+
+            if (entrada.equalsIgnoreCase("sair")) {
+                System.out.println("Programa finalizado.");
+                break;
+            }
+
+            if (entrada.equalsIgnoreCase("ver") && nomes.isEmpty()) {
+                System.out.println("Nenhum convidado adicionado.");
+            } else if (entrada.equalsIgnoreCase("ver")){
+                System.out.println("Lista atualizada de convidados: " + nomes + ".");
+            } else if (nomes.contains(entrada)) {
+                System.out.println("O nome " + entrada + " já está na lista de convidados.");
+            }else {
+                nomes.add(entrada);
+                System.out.println("O nome: " + entrada + " foi cadastrado com sucesso.");
+            }
+        }
+
+    }
 }
